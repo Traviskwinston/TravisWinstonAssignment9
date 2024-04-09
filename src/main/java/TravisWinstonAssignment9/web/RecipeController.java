@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import TravisWinstonAssignment9.domain.Recipe;
 import TravisWinstonAssignment9.service.RecipeService;
 
 @RestController
@@ -19,26 +20,26 @@ public class RecipeController {
 	}
 	
 	@GetMapping("/all-recipes")
-	public List<String> getAllRecipes() {	
+	public List<Recipe> getAllRecipes() {	
 		return recipeService.getAllRecipes();
 	}
 	
 	@GetMapping("/gluten-free")
-	public List<String> getGlutenFree() {
+	public List<Recipe> getGlutenFree() {
 		return recipeService.getGlutenFree();
 	}
 	
 	@GetMapping("/vegan")
-	public List<String> getVegan() {
+	public List<Recipe> getVegan() {
 		return recipeService.getVegan();
 	}
 	@GetMapping("/vegan-and-gluten-free")
-	public List<String> getVeganAndGlutenFree() {
+	public List<Recipe> getVeganAndGlutenFree() {
 		return recipeService.getVeganAndGlutenFreee();
 	}
 	
 	@GetMapping("/vegetarian")
-	public List<String> getVegetarian() {
+	public List<Recipe> getVegetarian() {
 		return recipeService.getVegetarian();
 	}
 
