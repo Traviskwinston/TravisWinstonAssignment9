@@ -32,13 +32,14 @@ public class TravisWinstonAssignment9Application {
 		Reader in = new FileReader("recipes.txt");
 		
 		//The Format for the Apache Commons to Parse the txt/csv file
-		CSVFormat csvFormat = CSVFormat	.DEFAULT
-										.withHeader("Cooking Minutes", "Dairy Free", "Gluten Free", "Instructions", 
+		CSVFormat csvFormat = CSVFormat	.Builder.create()
+										.setHeader("Cooking Minutes", "Dairy Free", "Gluten Free", "Instructions", 
 												"Preparation Minutes", "Price Per Serving", "Ready In Minutes", 
 												"Servings", "Spoonacular Score", "Title", "Vegan", "Vegetarian")
-										.withSkipHeaderRecord(true)
-										.withIgnoreSurroundingSpaces()
-										.withEscape('\\');
+										.setSkipHeaderRecord(true)
+										.setIgnoreSurroundingSpaces(true)
+										.setEscape('\\')
+										.build();
 		
 		//Parse(File_To_Parse, Format_To_Parse_With)
 		CSVParser csvParser = CSVParser.parse(in, csvFormat);
